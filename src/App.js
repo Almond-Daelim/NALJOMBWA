@@ -1,10 +1,12 @@
 import '../src/styles/global.css';
 import { Mobile, PC } from '../src/hooks/useMediaQuery';
+import Home from '../src/pages/index';
 
 function App() {
   return (
     <>
       <div>
+        <Home></Home>
         <Mobile>
           <div className="mobile_container">이건 모바일 !!</div>
         </Mobile>
