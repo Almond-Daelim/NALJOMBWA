@@ -1,4 +1,5 @@
 import '../src/styles/global.css';
+
 import Home from '../src/pages/index';
 
 function App() {
