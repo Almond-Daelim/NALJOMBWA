@@ -5,8 +5,8 @@ import Footer from '../components/common/Layout/Footer';
 const Home = () => {
   return (
     <div>
-      <Header></Header>
-      <Footer></Footer>
+      <Header />
+      <Footer />
     </div>
   );
 };

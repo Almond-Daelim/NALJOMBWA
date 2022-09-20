@@ -4,11 +4,9 @@ import Home from '../src/pages/index';
 
 function App() {
   return (
-    <>
-      <div>
-        <Home></Home>
-      </div>
-    </>
+    <div>
+      <Home />
+    </div>
   );
 }
 
