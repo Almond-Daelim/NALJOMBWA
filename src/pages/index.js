@@ -3,6 +3,7 @@ import Header from '../components/common/Layout/Header';
 import Footer from '../components/common/Layout/Footer';
 import Button from '../components/common/Button/Button';
 import ArrowButton from '../components/common/Button/ArrowButton/ArrowButton';
+import Switcher from '../components/common/DarkMode/Switcher';
 
 const Home = () => {
   const handleClickRight = () => {
@@ -15,6 +16,7 @@ const Home = () => {
   return (
     <div>
       <Header />
+      <Switcher />
       <ArrowButton
         direction="left"
         onPress={() => handleClickLeft()}
