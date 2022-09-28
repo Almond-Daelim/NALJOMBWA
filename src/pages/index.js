@@ -16,11 +16,11 @@ const Home = () => {
     <div>
       <Header />
       <ArrowButton
-        direction={'left'}
+        direction="left"
         onPress={() => handleClickLeft()}
       />
       <ArrowButton
-        direction={'right'}
+        direction="right"
         onPress={() => handleClickRight()}
       />
       <Button
