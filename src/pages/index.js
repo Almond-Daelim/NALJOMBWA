@@ -4,6 +4,7 @@ import Footer from '../components/common/Layout/Footer';
 import Button from '../components/common/Button/Button';
 import ArrowButton from '../components/common/Button/ArrowButton/ArrowButton';
 import Switcher from '../components/common/DarkMode/Switcher';
+import MainPage from './MainPage';
 
 const Home = () => {
   const handleClickRight = () => {
@@ -16,6 +17,7 @@ const Home = () => {
   return (
     <div>
       <Header />
+      <MainPage />
       <Switcher />
       <ArrowButton
         direction="left"
