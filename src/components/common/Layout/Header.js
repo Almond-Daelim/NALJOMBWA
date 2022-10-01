@@ -5,9 +5,9 @@ import logo from '../../../assets/logo.png';
 const Header = () => {
   return (
     <header>
-      <nav class="navbar navbar-expand-lg shadow-md py-2 bg-white relative flex items-center w-full justify-between">
-        <div class="px-6 w-full flex flex-wrap items-center">
-          <div class="lg:w-[224px] w-full flex flex-wrap items-center justify-between">
+      <nav class="relative navbar navbar-expand-lg shadow-md py-2 bg-white ">
+        <div class="px-6 w-full flex justify-between">
+          <div class="lg:hidden flex">
             <button
               class=" navbar-toggler border-0 py-3 lg:hidden leading-none text-xl bg-transparent text-gray-600 hover:text-gray-700 focus:text-gray-700 transition-shadow duration-150 ease-in-out mr-2"
               type="button"
@@ -32,60 +32,57 @@ const Header = () => {
                 />
               </svg>
             </button>
-            <div>
+          </div>
+          <div class="h-[100px] px-6 flex flex-wrap items-center flex-row justify-center">
+            <div class="lg:static lg:translate-x-0 lg:translate-y-0 flex flex-row justify-center absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] ">
               <img
-                class="inline-block mr-[14px] "
+                class="inline-block"
                 src={logo}
                 alt="logo"
               />
             </div>
-            {/* dark mode 임시 */}
-            <button
-              type="button"
-              class="sm:block lg:hidden  text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 "
-            >
-              Dark
-            </button>
           </div>
-          <div
-            class=" sm:hidden lg:block navbar-collapse collapse grow items-center"
-            id="navbarSupportedContentY"
-          >
-            <ul class=" navbar-nav  lg:flex flex items-center justify-end">
+          <div class=" hidden lg:flex grow-2 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] items-center justify-center float-left">
+            <div class="  flex items-center">
               <img
                 src={search}
-                class="w-[27px] h-[27px] inline-block mr-[14px]"
+                class="w-[27px] h-[27px] mr-[14px] inlin-block align-middle "
                 alt="search"
               />
               <input
-                class="bg-[#5469b2] w-[290px] h-[38px] rounded-[20px] p-4 mr-[94px] text-white placeholder:text-white"
+                class="bg-[#5469b2] w-[290px] h-[38px] rounded-[20px] p-4  text-white placeholder:text-white"
                 placeholder="검색어를 입력해주세요"
               />
-
-              <li class="mr-[94px] nav-item">
-                <a
-                  class="nav-link block pr-2 lg:px-2 py-2 hover:text-blue-500 focus:text-gray-700 transition duration-150 ease-in-out"
-                  href="#!"
-                  data-mdb-ripple="true"
-                  data-mdb-ripple-color="light"
-                >
-                  추천 관광지
-                </a>
-              </li>
-              <li class="mr-[212px] nav-item">
-                <a
-                  class=" nav-link block pr-2 lg:px-3 py-2 hover:text-blue-500 focus:text-gray-700 transition duration-150 ease-in-out"
-                  href="#!"
-                  data-mdb-ripple="true"
-                  data-mdb-ripple-color="light"
-                >
-                  지도보기
-                </a>
-              </li>
+            </div>
+          </div>
+          <div class=" grow-1 flex ">
+            <ul class=" navbar-nav flex items-center ">
+              <ul class="lg:flex hidden items-center">
+                <li class=" nav-item">
+                  <a
+                    class="nav-link block pr-2 lg:px-2 py-2 mr-[91px] hover:text-blue-500 focus:text-gray-700 transition duration-150 ease-in-out"
+                    href="#!"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                  >
+                    추천 관광지
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class=" nav-link block lg:px-3 mr-[120px] py-2 hover:text-blue-500 focus:text-gray-700 transition duration-150 ease-in-out "
+                    href="#!"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                  >
+                    지도보기
+                  </a>
+                </li>
+              </ul>
               {/* dark mode 임시 */}
               <button
                 type="button"
-                class="sm:invisible lg:visible text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 "
+                class=" text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5  dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 "
               >
                 Dark
               </button>
