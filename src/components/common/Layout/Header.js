@@ -7,6 +7,7 @@ const Header = () => {
     <header>
       <nav class="relative navbar navbar-expand-lg shadow-md py-2 bg-white ">
         <div class="px-6 w-full flex justify-between">
+          {/* mobile hamburger S*/}
           <div class="lg:hidden flex">
             <button
               class=" navbar-toggler border-0 py-3 lg:hidden leading-none text-xl bg-transparent text-gray-600 hover:text-gray-700 focus:text-gray-700 transition-shadow duration-150 ease-in-out mr-2"
@@ -33,6 +34,9 @@ const Header = () => {
               </svg>
             </button>
           </div>
+          {/* mobile hamburger E*/}
+
+          {/* LOGO */}
           <div class="h-[100px] px-6 flex flex-wrap items-center flex-row justify-center">
             <div class="lg:static lg:translate-x-0 lg:translate-y-0 flex flex-row justify-center absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] ">
               <img
@@ -42,6 +46,8 @@ const Header = () => {
               />
             </div>
           </div>
+
+          {/* PC Menu items */}
           <div class=" hidden lg:flex grow-2 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] items-center justify-center float-left">
             <div class="  flex items-center">
               <img
@@ -79,7 +85,6 @@ const Header = () => {
                   </a>
                 </li>
               </ul>
-              {/* dark mode 임시 */}
               <button
                 type="button"
                 class=" text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5  dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 "
