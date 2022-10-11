@@ -5,6 +5,7 @@ import Button from '../components/common/Button/Button';
 import ArrowButton from '../components/common/Button/ArrowButton/ArrowButton';
 import Switcher from '../components/common/DarkMode/Switcher';
 import MainPage from './MainPage';
+import Weather from '../Api/Weather/Weather';
 
 const Home = () => {
   const handleClickRight = () => {
@@ -18,6 +19,7 @@ const Home = () => {
     <div>
       <Header />
       <MainPage />
+      <Weather />
       <Switcher />
       <ArrowButton
         direction="left"
