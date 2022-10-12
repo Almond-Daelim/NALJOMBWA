@@ -4,6 +4,8 @@ const MainPage = () => {
   const [data, setData] = useState([]);
   const kewWord = '억새';
 
+  console.log(process.env.REACT_APP_API_KEY);
+
   useEffect(() => {
     (async () => {
       const response = await fetch(
