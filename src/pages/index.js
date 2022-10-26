@@ -14,12 +14,15 @@ const Home = () => {
   const handleClickLeft = () => {
     alert('left');
   };
+  const moveCityData = x => {
+    console.log(x);
+  };
 
   return (
     <div>
       <Header />
       <MainPage />
-      <Weather />
+      <Weather moveCityData={moveCityData} />
       <Switcher />
       <ArrowButton
         direction="left"
