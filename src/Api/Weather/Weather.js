@@ -56,6 +56,7 @@ const Weather = ({ moveCityData }) => {
       if (clear.id === parseInt(data.city_id)) {
         city = data.kr;
       }
+      return null;
     });
     return city;
   };
@@ -87,18 +88,20 @@ const Weather = ({ moveCityData }) => {
       </div>
     );
   };
+  // eslint에서 삼항연산자 중첩 사용시 Do not nest ternary expressions이 발생
+  const check = () => {
+    if (apiError) {
+      return <div>정보없음</div>;
+    } else if (weather) {
+      return makeWeatherInfo();
+    } else {
+      <div>정보없음</div>;
+    }
+  };
 
   return (
     <div class="flex w-[256px] h-[286px] rounded-lg shadow-lg bg-white dark:bg-gray-900">
-      <div class="m-auto">
-        {apiError ? (
-          <div>정보없음</div>
-        ) : weather ? (
-          makeWeatherInfo()
-        ) : (
-          <div>정보없음</div>
-        )}
-      </div>
+      <div class="m-auto">{check()}</div>
     </div>
   );
 };
