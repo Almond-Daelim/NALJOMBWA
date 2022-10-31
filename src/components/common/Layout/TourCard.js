@@ -5,12 +5,12 @@ const TourCard = api_data => {
         <ul class=" bg-slate-400 w-full  h-[304px] rounded-[10px]">
           <img
             class="w-[100%] h-[100%] object-cover rounded-[10px]"
-            src={tourData.firstimage}
-            alt={tourData.title + '이미지'}
+            src={api_data.firstimage}
+            alt={api_data.title + '이미지'}
           />
         </ul>
-        <li>{tourData.title}</li>
-        <li>{tourData.addr1}</li>
+        <li>{api_data.title}</li>
+        <li>{api_data.addr1}</li>
       </ul>
     </div>
   );
