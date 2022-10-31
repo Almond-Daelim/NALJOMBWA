@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Tour from '../Api/Tour/Tour';
 import TourCard from '../components/common/Layout/TourCard';
 

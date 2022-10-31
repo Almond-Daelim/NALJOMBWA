@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Button from '../components/common/Button/Button';
 import ArrowButton from '../components/common/Button/ArrowButton/ArrowButton';
 import Switcher from '../components/common/DarkMode/Switcher';

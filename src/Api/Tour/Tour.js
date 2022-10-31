@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import axios from 'axios';
-import TourCard from '../../components/common/Layout/TourCard';
 
 const Tour = props => {
   const service = props.pageNo;
@@ -36,7 +35,7 @@ const Tour = props => {
   //getData call
   useEffect(() => {
     getData(url);
-  }, []);
+  }, [url]);
 
   //api fetch
   const getData = async url => {

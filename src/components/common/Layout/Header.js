@@ -1,18 +1,13 @@
 import React, { useState } from 'react';
 import search from '../../../assets/search.png';
 import logo from '../../../assets/logo.png';
-import SearchPage from '../../../pages/SearchPage';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [search_KW, setSearch] = useState('');
   const navigate = useNavigate();
   const onChange = e => {
-    console.log(e.target.value);
     setSearch(e.target.value);
-  };
-  const SearchOnClick = () => {
-    navigate(`/search`, { state: { search_KW: search_KW } });
   };
   return (
     <header>
