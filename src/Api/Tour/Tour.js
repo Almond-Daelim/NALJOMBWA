@@ -26,16 +26,13 @@ const Tour = props => {
   //url
   let url = `${api.base}/${api.service}?serviceKey=${api.key}&numOfRows=${api.numOfRows}&pageNo=${api.pageNo}&MobileOS=${api.MobileOS}&MobileApp=${api.MoblieApp}&_type=${api._type}&listYN=${api.listYN}&arrange=${api.arrange}`;
 
-  //getData call
-  useEffect(() => {
-    //check PageNo
-    if (pageNo !== 0) {
-      url = url + `&keyword=${search_KW}`;
-    }
-    getData(url);
-  }, [getData, url]);
+  //check PageNo
+  if (pageNo !== 0) {
+    url = url + `&keyword=${search_KW}`;
+  }
 
   //api fetch
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const getData = async url => {
     try {
       const response = await axios.get(url);
@@ -44,6 +41,13 @@ const Tour = props => {
       console.log('Tour Api 불러오기 실패');
     }
   };
+
+  console.log(url);
+
+  //getData call
+  useEffect(() => {
+    getData(url);
+  }, [getData, setTourData, url]);
 };
 
 export default Tour;
