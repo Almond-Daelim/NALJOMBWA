@@ -26,16 +26,14 @@ const Tour = props => {
   //url
   let url = `${api.base}/${api.service}?serviceKey=${api.key}&numOfRows=${api.numOfRows}&pageNo=${api.pageNo}&MobileOS=${api.MobileOS}&MobileApp=${api.MoblieApp}&_type=${api._type}&listYN=${api.listYN}&arrange=${api.arrange}`;
 
-  //check PageNo
-  if (pageNo !== 0) {
-    const searchUrl = url + `&keyword=${search_KW}`;
-    url = searchUrl;
-  }
-
   //getData call
   useEffect(() => {
+    //check PageNo
+    if (pageNo !== 0) {
+      url = url + `&keyword=${search_KW}`;
+    }
     getData(url);
-  }, [getData]);
+  }, [getData, url]);
 
   //api fetch
   const getData = async url => {

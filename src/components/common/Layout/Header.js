@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import search from '../../../assets/search.png';
 import logo from '../../../assets/logo.png';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [search_KW, setSearch] = useState('');

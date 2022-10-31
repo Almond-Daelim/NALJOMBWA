@@ -1,5 +1,4 @@
 const TourCard = api_data => {
-  const tourData = api_data.data;
   return (
     <div className="grid justify-center grid-cols-auto-fit gap-x-[34px] gap-y-[82px]">
       <ul>
