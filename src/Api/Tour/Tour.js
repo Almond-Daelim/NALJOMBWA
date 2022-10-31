@@ -35,7 +35,7 @@ const Tour = props => {
   //getData call
   useEffect(() => {
     getData(url);
-  }, [url]);
+  }, [getData]);
 
   //api fetch
   const getData = async url => {

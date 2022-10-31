@@ -5,7 +5,6 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [search_KW, setSearch] = useState('');
-  const navigate = useNavigate();
   const onChange = e => {
     setSearch(e.target.value);
   };
