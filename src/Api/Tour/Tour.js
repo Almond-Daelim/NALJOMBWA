@@ -2,52 +2,51 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import TourCard from '../../components/common/Layout/TourCard';
 
-const Tour = service => {
-  const [data, setData] = useState([]);
-  const pageNo = service.pageNo;
+const Tour = props => {
+  const service = props.pageNo;
+  const pageNo = service;
+  const setTourData = props.stateProps;
+  const search_KW = props.keyWord;
   const env = process.env;
   const service_check = pageNo === 0 ? 'areaBasedList' : 'searchKeyword';
 
+  //api Assets
   const api = {
     key: env.REACT_APP_API_KEY,
     base: env.REACT_APP_BASE_URL,
     service: service_check,
-    MobileOS: env.MOBILE_OS,
-    MoblieApp: env.MOBILE_APP,
-    listYN: 'Y',
-    arrange: 'C',
-    numOfRows: env.NUM_OF_ROWS,
-    pageNo: env.PAGE_NO,
-    _type: 'json',
+    MobileOS: env.REACT_APP_MOBILE_OS,
+    MoblieApp: env.REACT_APP_MOBILE_APP,
+    listYN: env.REACT_APP_LISTYN,
+    arrange: env.REACT_APP_ARRANGE,
+    numOfRows: env.REACT_APP_NUM_OF_ROWS,
+    pageNo: env.REACT_APP_PAGE_NO,
+    _type: env.REACT_APP_TYPE,
   };
-  const url = `${api.base}/${api.service}?serviceKey=${api.key}&numOfRows=${api.numOfRows}&pageNo=${api.pageNo}&MobileOS=${api.MobileOS}&MobileApp=${api.MoblieApp}&_type=${api._type}&listYN=${api.listYN}&arrange=${api.arrange}`;
 
+  //url
+  let url = `${api.base}/${api.service}?serviceKey=${api.key}&numOfRows=${api.numOfRows}&pageNo=${api.pageNo}&MobileOS=${api.MobileOS}&MobileApp=${api.MoblieApp}&_type=${api._type}&listYN=${api.listYN}&arrange=${api.arrange}`;
+
+  //check PageNo
+  if (pageNo !== 0) {
+    const searchUrl = url + `&keyword=${search_KW}`;
+    url = searchUrl;
+  }
+
+  //getData call
   useEffect(() => {
     getData(url);
   }, []);
 
+  //api fetch
   const getData = async url => {
     try {
       const response = await axios.get(url);
-      setData(response.data.response.body.items.item);
+      setTourData(response.data.response.body.items.item);
     } catch (err) {
       console.log('Tour Api 불러오기 실패');
     }
   };
-
-  return (
-    <div className="grid justify-center grid-cols-auto-fit gap-x-[34px] gap-y-[82px]">
-      {data
-        .filter(data => data.firstimage && data)
-        .map((post, idx) => (
-          <TourCard
-            key={idx}
-            data={post}
-          />
-        ))}
-      ;
-    </div>
-  );
 };
 
 export default Tour;
