@@ -39,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-syntax-typescript": "^7.20.0",
     "autoprefixer": "^10.4.9",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
