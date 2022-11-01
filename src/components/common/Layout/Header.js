@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import search from '../../../assets/search.png';
 import logo from '../../../assets/logo.png';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
+  const [search_KW, setSearch] = useState('');
+  const onChange = e => {
+    setSearch(e.target.value);
+  };
   return (
     <header>
       <nav class="relative navbar navbar-expand-lg shadow-md py-2 bg-white ">
@@ -50,14 +55,19 @@ const Header = () => {
           {/* PC Menu items */}
           <div class=" hidden lg:flex grow-2 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] items-center justify-center float-left">
             <div class="  flex items-center">
-              <img
-                src={search}
-                class="w-[27px] h-[27px] mr-[14px] inlin-block align-middle "
-                alt="search"
-              />
+              <Link to={`/search/${search_KW}`}>
+                <button>
+                  <img
+                    src={search}
+                    class="w-[27px] h-[27px] mr-[14px] inlin-block align-middle "
+                    alt="search"
+                  />
+                </button>
+              </Link>
               <input
                 class="bg-[#5469b2] w-[290px] h-[38px] rounded-[20px] p-4  text-white placeholder:text-white"
                 placeholder="검색어를 입력해주세요"
+                onChange={onChange}
               />
             </div>
           </div>
