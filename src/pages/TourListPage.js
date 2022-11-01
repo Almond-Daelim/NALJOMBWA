@@ -11,6 +11,9 @@ const TourListPage = props => {
     setTourData(newData);
   };
 
+  // console.log('tourListPage호출');
+  // console.log(tourData);
+
   const getData = () => {
     return (
       <Tour

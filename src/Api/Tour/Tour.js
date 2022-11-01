@@ -32,22 +32,21 @@ const Tour = props => {
   }
 
   //api fetch
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const getData = async url => {
+  const callGetData = async url => {
     try {
       const response = await axios.get(url);
       setTourData(response.data.response.body.items.item);
     } catch (err) {
       console.log('Tour Api 불러오기 실패');
+      console.log(err);
     }
   };
 
-  console.log(url);
-
   //getData call
   useEffect(() => {
-    getData(url);
-  }, [getData, setTourData, url]);
+    callGetData(url);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 };
 
 export default Tour;
