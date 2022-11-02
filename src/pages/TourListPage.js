@@ -24,6 +24,8 @@ const TourListPage = props => {
     );
   };
 
+  //  console.log(tourData);
+
   return (
     <div className="grid justify-center grid-cols-auto-fit gap-x-[34px] gap-y-[82px]">
       {getData()}
