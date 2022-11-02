@@ -18,21 +18,28 @@ const Weather = ({ moveCityData }) => {
     });
     const city_id = dataList.join();
     const url = `${api.base}group?id=${city_id}&appid=${api.key}&units=${api.units}&lang=${api.lang}`;
-    axios
-      .get(url)
-      .then(res => {
-        const data = res.data;
-        console.log('성공');
-        setWeather({
-          data: data.list,
-          loading: false,
+    if ((Date.now() - localStorage.getItem('saveDate')) / 1000 / 60 > 60) {
+      axios
+        .get(url)
+        .then(res => {
+          const data = res.data;
+          console.log('성공');
+          setWeather({
+            data: data.list,
+          });
+          localStorage.setItem('cityData', JSON.stringify(data.list));
+          localStorage.setItem('saveDate', Date.now());
+        })
+        .catch(err => {
+          console.log('실패');
+          console.log(err);
+          setApiError(err);
         });
-      })
-      .catch(err => {
-        console.log('실패');
-        console.log(err);
-        setApiError(err);
+    } else {
+      setWeather({
+        data: JSON.parse(localStorage.getItem('cityData')),
       });
+    }
   }, []);
   const shuffle = arr => {
     return arr.sort(() => Math.random() - 0.5);
