@@ -4,12 +4,24 @@ import TourListPage from './TourListPage';
 
 const SearchPage = () => {
   const params = useParams();
-  return (
-    <TourListPage
-      pageNo={1}
-      keyWord={params.search_KW}
-    />
-  );
+  const kw = params.search_KW;
+
+  const getData = () => {
+    return (
+      <TourListPage
+        pageNo={1}
+        keyWord={params.search_KW}
+      />
+    );
+  };
+
+  if (kw !== '') {
+    return <>{getData()}</>;
+  } else {
+    console.log('kw값이 없습니다.');
+  }
+
+  return;
 };
 
 export default SearchPage;
