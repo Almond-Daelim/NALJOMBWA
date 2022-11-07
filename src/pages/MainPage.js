@@ -3,6 +3,7 @@ import Button from '../components/common/Button/Button';
 import ArrowButton from '../components/common/Button/ArrowButton/ArrowButton';
 import Switcher from '../components/common/DarkMode/Switcher';
 import Weather from '../Api/Weather/Weather';
+import WeatherMap from '../Api/Weather/WeatherMap';
 import TourListPage from './TourListPage';
 
 const MainPage = () => {
@@ -17,6 +18,7 @@ const MainPage = () => {
   };
   return (
     <>
+      <WeatherMap />
       <Weather moveCityData={moveCityData} />
       <Switcher />
       <ArrowButton
