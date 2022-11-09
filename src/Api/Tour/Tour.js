@@ -6,8 +6,10 @@ const Tour = props => {
   const pageNo = service;
   const setTourData = props.stateProps;
   const search_KW = props.keyWord;
+  const contentId = props.contentId;
+  const contentTypeId = props.contentTypeId;
   const env = process.env;
-  const service_check = pageNo === 0 ? 'areaBasedList' : 'searchKeyword';
+  const service_check = pageNo === 2 ? 'detailIntro' : 'searchKeyword';
 
   //api Assets
   const api = {
@@ -31,8 +33,8 @@ const Tour = props => {
     url = url + `&listYN=${api.listYN}&arrange=${api.arrange}`;
   } else if (pageNo === 1) {
     url = url + `&keyword=${search_KW}`;
-  } else if (pageNo === 3) {
-    // url = url + `&_type=json&contentId=129160&contentTypeId=12`;
+  } else if (pageNo === 2) {
+    url = url + `&contentId=${contentId}&contentTypeId=${contentTypeId}`;
   }
 
   //api fetch
@@ -40,7 +42,6 @@ const Tour = props => {
     try {
       const response = await axios.get(url);
       setTourData(response.data.response.body.items.item);
-      console.log(url);
     } catch (err) {
       console.log('Tour Api 불러오기 실패');
       console.log(err);

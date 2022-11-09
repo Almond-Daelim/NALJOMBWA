@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import Footer from '../components/common/Layout/Footer';
 import Header from '../components/common/Layout/Header';
+import TourListPage from './TourListPage';
 const Detail = () => {
   const location = useLocation();
   const title = location.state.title;
@@ -8,9 +9,16 @@ const Detail = () => {
   const addr1 = location.state.addr1;
   const contentId = location.state.contentId;
   const contentTypeId = location.state.contentTypeTd;
+  const restDate = location.state.restDate;
+  console.log(restDate);
   return (
     <>
       <Header />
+      <TourListPage
+        pageNo={2}
+        contentId={contentId}
+        contentTypeId={contentTypeId}
+      />
       <div className="flex justify-center min-w-[730.25px]">
         <div className="flex-wrap justify-center row-auto">
           <div className="flex justify-center w-[730.25px] h-[730.75px] bg-slate-500 rounded-[15px]">
@@ -24,8 +32,6 @@ const Detail = () => {
             <ul>
               <li>{title}</li>
               <li>{addr1}</li>
-              <li>{contentId}</li>
-              <li>{contentTypeId}</li>
             </ul>
           </div>
           <div className="flex w-[732.25px] h-[54px] bg-slate-200">
