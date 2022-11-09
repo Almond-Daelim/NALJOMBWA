@@ -1,10 +1,13 @@
 import { useLocation } from 'react-router-dom';
+import Footer from '../components/common/Layout/Footer';
 import Header from '../components/common/Layout/Header';
 const Detail = () => {
   const location = useLocation();
   const title = location.state.title;
   const firstimage = location.state.firstimage;
   const addr1 = location.state.addr1;
+  const contentId = location.state.contentId;
+  const contentTypeId = location.state.contentTypeTd;
   return (
     <>
       <Header />
@@ -21,6 +24,8 @@ const Detail = () => {
             <ul>
               <li>{title}</li>
               <li>{addr1}</li>
+              <li>{contentId}</li>
+              <li>{contentTypeId}</li>
             </ul>
           </div>
           <div className="flex w-[732.25px] h-[54px] bg-slate-200">
@@ -40,16 +45,27 @@ const Detail = () => {
               </ul>
             </div>
           </div>
-          <div className="flex-wrap w-[730.25px] h-[508px] bg-slate-200">
-            <div className=" w-[243px] h-[74px] bg-lime-100">주소</div>
-            <div className="  w-[243px] h-[74px] bg-lime-300">개장일</div>
-            <div className="  w-[243px] h-[74px] bg-lime-500">쉬는날</div>
-            <div className="  w-[243px] h-[74px] bg-lime-700">이용시간</div>
-            <div className="  w-[243px] h-[74px] bg-teal-50">주차시설</div>
-            <div className="  w-[243px] h-[74px] bg-teal-200">홈페이지</div>
+          <div className="flex">
+            <div className="flex-wrap h-[424px] bg-slate-200">
+              <div className=" w-[243px] h-[74px] ">주소</div>
+              <div className="  w-[243px] h-[74px] ">개장일</div>
+              <div className="  w-[243px] h-[74px] ">쉬는날</div>
+              <div className="  w-[243px] h-[74px] ">이용시간</div>
+              <div className="  w-[243px] h-[74px] ">주차시설</div>
+              <div className="  w-[243px] h-[74px] ">홈페이지</div>
+            </div>
+            <div className="flex-wrap h-[424px]">
+              <div className=" w-[486px] h-[74px] ">{addr1}</div>
+              <div className="  w-[486px] h-[74px] ">개장일</div>
+              <div className="  w-[486px] h-[74px] ">쉬는날</div>
+              <div className="  w-[486px] h-[74px] ">이용시간</div>
+              <div className="  w-[486px] h-[74px] ">주차시설</div>
+              <div className="  w-[486px] h-[74px] ">홈페이지</div>
+            </div>
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

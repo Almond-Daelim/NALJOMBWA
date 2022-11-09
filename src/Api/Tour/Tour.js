@@ -24,11 +24,15 @@ const Tour = props => {
   };
 
   //url
-  let url = `${api.base}/${api.service}?serviceKey=${api.key}&numOfRows=${api.numOfRows}&pageNo=${api.pageNo}&MobileOS=${api.MobileOS}&MobileApp=${api.MoblieApp}&_type=${api._type}&listYN=${api.listYN}&arrange=${api.arrange}`;
+  let url = `${api.base}/${api.service}?serviceKey=${api.key}&numOfRows=${api.numOfRows}&pageNo=${api.pageNo}&MobileOS=${api.MobileOS}&MobileApp=${api.MoblieApp}&_type=${api._type}`;
 
   //check PageNo
-  if (pageNo !== 0) {
+  if (pageNo === 0) {
+    url = url + `&listYN=${api.listYN}&arrange=${api.arrange}`;
+  } else if (pageNo === 1) {
     url = url + `&keyword=${search_KW}`;
+  } else if (pageNo === 3) {
+    // url = url + `&_type=json&contentId=129160&contentTypeId=12`;
   }
 
   //api fetch
@@ -36,6 +40,7 @@ const Tour = props => {
     try {
       const response = await axios.get(url);
       setTourData(response.data.response.body.items.item);
+      console.log(url);
     } catch (err) {
       console.log('Tour Api 불러오기 실패');
       console.log(err);
