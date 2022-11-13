@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import Detail from '../../../pages/DetailPage';
+import TourListPage from '../../../pages/TourListPage';
 const TourCard = api_data => {
   const tourData = api_data;
   const {
@@ -9,7 +11,9 @@ const TourCard = api_data => {
     contentid,
     contenttypeid,
     restdateculture,
+    restdate,
   } = tourData.data;
+
   return (
     <div className="grid justify-center grid-cols-auto-fit gap-x-[34px] gap-y-[82px]">
       <Link
@@ -21,7 +25,8 @@ const TourCard = api_data => {
           addr1: addr1,
           contentId: contentid,
           contentTypeTd: contenttypeid,
-          restDate: restdateculture,
+          restDateCulture: restdateculture,
+          restDate: restdate,
         }}
       >
         <ul>
@@ -32,6 +37,7 @@ const TourCard = api_data => {
               alt={title + '이미지'}
             />
           </ul>
+
           <li>{title}</li>
           <li>{addr1}</li>
         </ul>

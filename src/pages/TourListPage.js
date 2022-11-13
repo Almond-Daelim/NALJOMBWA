@@ -4,7 +4,6 @@ import TourCard from '../components/common/Layout/TourCard';
 
 const TourListPage = props => {
   const [tourData, setTourData] = useState([]);
-  //const [detailData, setDetailData] = useState([]);
   const TpageNo = props;
   const kw_result = encodeURIComponent(TpageNo.keyWord);
   const contentId = TpageNo.contentId;
@@ -16,8 +15,6 @@ const TourListPage = props => {
 
   // console.log('tourListPage호출');
   //  console.log(tourData);
-
-  console.log(contentTypeId);
 
   //  tourData
   //    .filter(tourData => tourData.contenttypeid === '12')
@@ -38,7 +35,6 @@ const TourListPage = props => {
   };
 
   //  console.log(tourData);
-  //  console.log(detailData);
 
   return (
     <div className="grid justify-center grid-cols-auto-fit gap-x-[34px] gap-y-[82px]">
