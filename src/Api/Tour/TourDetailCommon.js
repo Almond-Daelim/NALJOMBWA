@@ -32,8 +32,6 @@ const TourDetailCommon = props => {
       `&defaultYN=Y&firstImageYN=Y&areacodeYN=Y&catcodeYN=Y&addrinfoYN=Y&mapinfoYN=Y&overviewYN=Y`;
   }
 
-  console.log(url);
-
   //api fetch
   const callGetData = async url => {
     try {
