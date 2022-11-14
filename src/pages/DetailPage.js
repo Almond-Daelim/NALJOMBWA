@@ -223,7 +223,7 @@ const Detail = () => {
             <>
               {clickTab === 1 ? (
                 <div className="flex items-center">
-                  <div className="flex items-center justify-center w-[243px] h-[370px] bg-slate-200 ">
+                  <div className="flex items-center justify-center w-[243px] h-[480px] bg-slate-200 ">
                     <p>소개</p>
                   </div>
                   <div className="w-[486px]">
