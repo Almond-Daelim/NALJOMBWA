@@ -1,16 +1,13 @@
 import { useEffect } from 'react';
 import axios from 'axios';
-
-const Tour = props => {
+const TourDetailCommon = props => {
   const service = props.pageNo;
   const pageNo = service;
-  const setTourData = props.stateProps;
-  const setDetailData = props.detailState;
-  const search_KW = props.keyWord;
   const contentId = props.contentId;
   const contentTypeId = props.contentTypeId;
+  const setOverViewState = props.overviewState;
   const env = process.env;
-  const service_check = pageNo === 2 ? 'detailIntro' : 'searchKeyword';
+  const service_check = pageNo === 2 ? 'detailIntro' : 'detailCommon';
 
   //api Assets
   const api = {
@@ -27,26 +24,19 @@ const Tour = props => {
   };
 
   //url
-  let url = `${api.base}/${api.service}?serviceKey=${api.key}&numOfRows=${api.numOfRows}&pageNo=${api.pageNo}&MobileOS=${api.MobileOS}&MobileApp=${api.MoblieApp}&_type=${api._type}`;
+  let url = `${api.base}/${api.service}?serviceKey=${api.key}&numOfRows=${api.numOfRows}&pageNo=${api.pageNo}&MobileOS=${api.MobileOS}&MobileApp=${api.MoblieApp}&_type=${api._type}&contentId=${contentId}&contentTypeId=${contentTypeId}`;
 
-  //check PageNo
-  if (pageNo === 0) {
-    url = url + `&listYN=${api.listYN}&arrange=${api.arrange}`;
-  } else if (pageNo === 1) {
-    url = url + `&keyword=${search_KW}`;
-  } else if (pageNo === 2) {
-    url = url + `&contentId=${contentId}&contentTypeId=${contentTypeId}`;
+  if (pageNo === 3) {
+    url =
+      url +
+      `&defaultYN=Y&firstImageYN=Y&areacodeYN=Y&catcodeYN=Y&addrinfoYN=Y&mapinfoYN=Y&overviewYN=Y`;
   }
 
   //api fetch
   const callGetData = async url => {
     try {
       const response = await axios.get(url);
-      if (pageNo === 1) {
-        setTourData(response.data.response.body.items.item);
-      } else if (pageNo === 2) {
-        setDetailData(response.data.response.body.items.item);
-      }
+      setOverViewState(response.data.response.body.items.item);
     } catch (err) {
       console.log('Tour Api 불러오기 실패');
       console.log(err);
@@ -59,5 +49,4 @@ const Tour = props => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
-
-export default Tour;
+export default TourDetailCommon;
