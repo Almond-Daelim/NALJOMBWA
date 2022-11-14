@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom';
-import Detail from '../../../pages/DetailPage';
-import TourListPage from '../../../pages/TourListPage';
 const TourCard = api_data => {
   const tourData = api_data;
   const {
