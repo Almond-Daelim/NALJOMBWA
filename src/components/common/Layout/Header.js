@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import search from '../../../assets/search.png';
 import logo from '../../../assets/logo.png';
 import { Link } from 'react-router-dom';
+import Switcher from '../DarkMode/Switcher';
 
 const Header = () => {
   const [search_KW, setSearch] = useState('');
@@ -10,7 +11,7 @@ const Header = () => {
   };
   return (
     <header>
-      <nav class="relative navbar navbar-expand-lg shadow-md py-2 bg-white ">
+      <nav class="relative navbar navbar-expand-lg shadow-md py-2 bg-white dark:bg-slate-900">
         <div class="px-6 w-full flex justify-between">
           {/* mobile hamburger S*/}
           <div class="lg:hidden flex">
@@ -59,13 +60,13 @@ const Header = () => {
                 <button>
                   <img
                     src={search}
-                    class="w-[27px] h-[27px] mr-[14px] inlin-block align-middle "
+                    class="w-[27px] h-[27px] mr-[14px] inlin-block align-middle dark:invert"
                     alt="search"
                   />
                 </button>
               </Link>
               <input
-                class="bg-[#5469b2] w-[290px] h-[38px] rounded-[20px] p-4  text-white placeholder:text-white"
+                class="bg-[#5469b2] w-[290px] h-[38px] rounded-[20px] p-4  text-white placeholder:text-white dark:bg-gray-700"
                 placeholder="검색어를 입력해주세요"
                 onChange={onChange}
               />
@@ -76,7 +77,7 @@ const Header = () => {
               <ul class="lg:flex hidden items-center">
                 <li class=" nav-item">
                   <a
-                    class="nav-link block pr-2 lg:px-2 py-2 mr-[91px] hover:text-blue-500 focus:text-gray-700 transition duration-150 ease-in-out"
+                    class="nav-link block pr-2 lg:px-2 py-2 mr-[91px] hover:text-blue-500 focus:text-gray-700 transition duration-150 ease-in-out dark:text-white"
                     href="#!"
                     data-mdb-ripple="true"
                     data-mdb-ripple-color="light"
@@ -86,7 +87,7 @@ const Header = () => {
                 </li>
                 <li class="nav-item">
                   <a
-                    class=" nav-link block lg:px-3 mr-[120px] py-2 hover:text-blue-500 focus:text-gray-700 transition duration-150 ease-in-out "
+                    class=" nav-link block lg:px-3 mr-[120px] py-2 hover:text-blue-500 focus:text-gray-700 transition duration-150 ease-in-out dark:text-white"
                     href="#!"
                     data-mdb-ripple="true"
                     data-mdb-ripple-color="light"
@@ -95,12 +96,7 @@ const Header = () => {
                   </a>
                 </li>
               </ul>
-              <button
-                type="button"
-                class=" text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5  dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 "
-              >
-                Dark
-              </button>
+              <Switcher />
             </ul>
           </div>
         </div>

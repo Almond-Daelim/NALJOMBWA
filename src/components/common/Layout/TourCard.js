@@ -30,14 +30,14 @@ const TourCard = api_data => {
         <ul>
           <ul className=" bg-slate-400 w-full  h-[304px] rounded-[10px]">
             <img
-              className="w-[100%] h-[100%] object-cover rounded-[10px]"
+              className="w-[100%] h-[100%] object-cover rounded-[10px] shadow-md"
               src={firstimage}
               alt={title + '이미지'}
             />
           </ul>
 
-          <li>{title}</li>
-          <li>{addr1}</li>
+          <li class="text-lg font-bold mt-2 dark:text-white">{title}</li>
+          <li class=" dark:text-gray-400">{addr1}</li>
         </ul>
       </Link>
     </div>
