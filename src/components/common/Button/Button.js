@@ -6,7 +6,7 @@ const Button = props => {
   return (
     <button
       onClick={onPress}
-      class="bg-amber-300 hover:bg-amber-200 shadow-md text-black font-bold py-2 px-4 rounded-md "
+      class="bg-amber-300 hover:bg-amber-200 shadow-md text-black font-bold py-2 px-4 rounded-md dark:bg-indigo-900 dark:hover:bg-indigo-800 dark:text-gray-300"
     >
       {title.split('\n').map(text => (
         <>
