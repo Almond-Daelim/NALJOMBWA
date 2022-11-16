@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Tour from '../Api/Tour/Tour';
 import TourCard from '../components/common/Layout/TourCard';
+import Spinner from '../components/common/Spinner/Spinner';
 
 const TourListPage = props => {
   const [tourData, setTourData] = useState([]);
@@ -8,9 +9,11 @@ const TourListPage = props => {
   const kw_result = encodeURIComponent(TpageNo.keyWord);
   const contentId = TpageNo.contentId;
   const contentTypeId = TpageNo.contentTypeId;
+  const [loding, setLoding] = useState(true);
 
   const setData = newData => {
     setTourData(newData);
+    setLoding(false);
   };
 
   // console.log('tourListPage호출');
@@ -36,17 +39,35 @@ const TourListPage = props => {
 
   //  console.log(tourData);
 
+  // return (
+  //   <div className="grid justify-center grid-cols-auto-fit gap-x-[34px] gap-y-[82px]">
+  //     {getData()}
+  //     {tourData
+  //       .filter(tourData => tourData.firstimage && tourData)
+  //       .map((post, idx) => (
+  //         <TourCard
+  //           key={idx}
+  //           data={post}
+  //         />
+  //       ))}
+  //   </div>
+  // );
+
   return (
     <div className="grid justify-center grid-cols-auto-fit gap-x-[34px] gap-y-[82px]">
       {getData()}
-      {tourData
-        .filter(tourData => tourData.firstimage && tourData)
-        .map((post, idx) => (
-          <TourCard
-            key={idx}
-            data={post}
-          />
-        ))}
+      {loding ? (
+        <Spinner />
+      ) : (
+        tourData
+          .filter(tourData => tourData.firstimage && tourData)
+          .map((post, idx) => (
+            <TourCard
+              key={idx}
+              data={post}
+            />
+          ))
+      )}
     </div>
   );
 };
