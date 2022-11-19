@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from '../src/pages/index';
 import SearchPage from './pages/SearchPage';
 import DetailPage from './pages/DetailPage';
+import MapPage from './pages/MapPage';
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
       <Route
         path="/detail/:title"
         element={<DetailPage />}
+      />
+      <Route
+        path="/map"
+        element={<MapPage />}
       />
     </Routes>
   );

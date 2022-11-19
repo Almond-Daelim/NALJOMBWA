@@ -54,35 +54,33 @@ const WeatherMap = () => {
 
   const makeWeatherMap = () => {
     return (
-      <div class="border">
-        <div class="max-w-xl relative">
-          <img
-            class="object-fill"
-            src={img}
-            alt="weather-map"
-          />
-          {weather.data.map((city, idx) => {
-            let aa = test(city);
-            let temp = Math.round(city.main.temp);
-            return (
-              <div
-                key={idx}
-                class={aa.location}
-              >
-                <span>{aa.city}</span>
-                <span>{temp}°C</span>
-                <img
-                  class="inline-block"
-                  src={`http://openweathermap.org/img/wn/${city.weather[0].icon.slice(
-                    0,
-                    -1,
-                  )}d.png`}
-                  alt="weatherIcon"
-                />
-              </div>
-            );
-          })}
-        </div>
+      <div className="max-w-xl relative mx-auto p-5 bg-blue-100 border-black dark:border-white border-x-4 border-b-4 shadow-xl dark:bg-slate-400">
+        <img
+          className="object-fill dark:invert"
+          src={img}
+          alt="weather-map"
+        />
+        {weather.data.map((city, idx) => {
+          let aa = test(city);
+          let temp = Math.round(city.main.temp);
+          return (
+            <div
+              key={idx}
+              className={aa.location}
+            >
+              <span>{aa.city}</span>
+              <span>{temp}°C</span>
+              <img
+                className="inline-block"
+                src={`http://openweathermap.org/img/wn/${city.weather[0].icon.slice(
+                  0,
+                  -1,
+                )}d.png`}
+                alt="weatherIcon"
+              />
+            </div>
+          );
+        })}
       </div>
     );
   };
@@ -97,7 +95,7 @@ const WeatherMap = () => {
     }
   };
 
-  return <div class="m-auto">{check()}</div>;
+  return <div className="m-auto">{check()}</div>;
 };
 
 export default WeatherMap;
