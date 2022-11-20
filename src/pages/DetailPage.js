@@ -86,27 +86,27 @@ const Detail = () => {
       <>
         {detailData.map((post, idx) => (
           <div key={idx}>
-            <div className="flex-wrap w-[486px] h-[100%] ">
-              <div className=" w-[424px] h-[74px] flex items-center ml-3">
+            <div className="flex-wrap w-[485.25px] h-[100%] border-y-2 border-r-2">
+              <div className=" w-[424px] h-[74px] flex items-center ml-3 dark:text-white">
                 {addr1}
               </div>
-              <div className="  w-[424px] h-[74px] flex items-center ml-3">
+              <div className="  w-[424px] h-[74px] flex items-center ml-3 dark:text-white">
                 {restdate}
               </div>
-              <div className="  w-[424px] h-[74px] flex items-center ml-3">
+              <div className="  w-[424px] h-[74px] flex items-center ml-3 dark:text-white">
                 <p dangerouslySetInnerHTML={{ __html: usetime }} />
               </div>
-              <div className="  w-[424px] h-[74px] flex items-center ml-3">
+              <div className="  w-[424px] h-[74px] flex items-center ml-3 dark:text-white">
                 {parking}
                 {post.parkingfee ? '/' + post.parkingfee : <> </>}
                 {/* 무료 주차시설인지 확인 */}
               </div>
-              <div className="  w-[424px] h-[74px] flex items-center ml-3">
+              <div className="  w-[424px] h-[74px] flex items-center ml-3 dark:text-white">
                 {tel}
               </div>
               {/* 주요 메뉴가 있는지 검사 */}
               {post.treatmenu ? (
-                <div className="  w-[424px] h-[74px] flex items-center ml-3">
+                <div className="  w-[424px] h-[74px] flex items-center ml-3 dark:text-white">
                   {post.treatmenu}
                 </div>
               ) : (
@@ -122,7 +122,7 @@ const Detail = () => {
   };
 
   return (
-    <>
+    <div class="dark:bg-slate-900">
       <Header />
       {/* Tab Menu */}
       {clickTab === 0 ? (
@@ -144,26 +144,28 @@ const Detail = () => {
         <div className="flex-wrap justify-center row-auto">
           <div className="flex justify-center w-[730.25px] h-[730.75px] bg-slate-500 rounded-[15px] mt-10">
             <img
-              className="w-[100%] object-cover rounded-[15px] "
+              className="w-[100%] object-cover rounded-[15px] shadow-md"
               src={firstimage}
               alt={title + '이미지'}
             />
           </div>
           <div className="flex w-[730.25px] ">
             <ul>
-              <li className="font-bold mt-5 text-3xl">{title}</li>
-              <li className="mt-2.5 mb-5 relative text-xl">
+              <li className="font-bold mt-5 text-3xl dark:text-white">
+                {title}
+              </li>
+              <li className="mt-2.5 mb-5 relative text-xl dark:text-white">
                 {' '}
                 {addr1}
-                <p className="before:content-[''] before:inline-block w-[100%] h-[20px] bg-yellow-200 absolute top-2 mix-blend-multiply">
+                <p className="before:content-[''] before:inline-block w-[100%] h-[20px] bg-yellow-200 absolute top-2 mix-blend-multiply dark:bg-gray-500">
                   <span className="hidden">{addr1}</span>
                 </p>
               </li>
             </ul>
           </div>
-          <div className="flex w-[732.25px] h-[54px]">
+          <div className="flex w-[732.25px] h-[54px] border-2">
             <div
-              className="flex justify-center w-[243px] h-[54px] bg-indigo-200 cursor-pointer hover:bg-indigo-300"
+              className="flex justify-center w-[243px] h-[54px] bg-indigo-200 cursor-pointer hover:bg-indigo-300 dark:bg-indigo-900 dark:hover:bg-indigo-800 dark:text-white"
               onClick={() => {
                 setClickTab(0);
               }}
@@ -173,7 +175,7 @@ const Detail = () => {
               </ul>
             </div>
             <div
-              className="flex justify-center w-[243px] h-[54px] bg-indigo-200 cursor-pointer hover:bg-indigo-300"
+              className="flex justify-center w-[243px] h-[54px] bg-indigo-200 cursor-pointer hover:bg-indigo-300 dark:bg-indigo-900 dark:hover:bg-indigo-800 dark:text-white"
               onClick={() => {
                 setClickTab(1);
               }}
@@ -183,7 +185,7 @@ const Detail = () => {
               </ul>
             </div>
             <div
-              className="flex justify-center w-[243px] h-[54px] bg-indigo-200 cursor-pointer hover:bg-indigo-300"
+              className="flex justify-center w-[243px] h-[54px] bg-indigo-200 cursor-pointer hover:bg-indigo-300 dark:bg-indigo-900 dark:hover:bg-indigo-800 dark:text-white"
               onClick={() => {
                 setClickTab(2);
               }}
@@ -197,7 +199,7 @@ const Detail = () => {
           {/* 기본정보 */}
           {clickTab === 0 ? (
             <div className="flex ">
-              <div className="flex-wrap h-[100%] bg-sky-100">
+              <div className="flex-wrap h-[100%] bg-sky-100 dark:bg-sky-900 dark:text-white border-2">
                 <div className=" w-[243px] h-[74px] flex items-center justify-center">
                   <p>주소</p>
                 </div>
@@ -254,7 +256,7 @@ const Detail = () => {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 export default Detail;
