@@ -56,7 +56,6 @@ const TourListPage = props => {
   return (
     <div className="grid justify-center grid-cols-auto-fit gap-x-[34px] gap-y-[82px]">
       {getData()}
-      {/* {console.log(tourData)} */}
       {loding ? (
         <Spinner />
       ) : (
