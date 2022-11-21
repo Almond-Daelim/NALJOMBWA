@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from '../components/common/Button/Button';
 import Weather from '../Api/Weather/Weather';
 import TourListPage from './TourListPage';
+import Slick from '../components/common/Slick/Slick';
 
 const MainPage = () => {
   const [cityName, setCityName] = useState(null);
@@ -30,7 +31,16 @@ const MainPage = () => {
           </div>
         </div>
         <div class="lg:flex-auto lg:max-w-2xl lg:mt-0 mt-5">
-          <div class="max-w-2xl mx-auto bg-slate-400">정보없음</div>
+          <div class="max-w-2xl mx-auto bg-slate-400">
+            {cityName ? (
+              <Slick
+                pageNo={1}
+                keyWord={cityName}
+              />
+            ) : (
+              <div>정보없음</div>
+            )}
+          </div>
         </div>
       </div>
       <div class="max-w-screen-2xl mx-auto">
