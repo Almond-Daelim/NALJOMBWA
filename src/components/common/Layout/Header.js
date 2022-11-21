@@ -11,12 +11,12 @@ const Header = () => {
   };
   return (
     <header>
-      <nav class="relative navbar navbar-expand-lg shadow-md py-2 bg-white dark:bg-slate-900">
-        <div class="px-6 w-full flex justify-between">
+      <nav className="relative navbar navbar-expand-lg shadow-md py-2 bg-white dark:bg-slate-900">
+        <div className="px-6 w-full flex justify-between">
           {/* mobile hamburger S*/}
-          <div class="lg:hidden flex">
+          <div className="lg:hidden flex">
             <button
-              class=" navbar-toggler border-0 py-3 lg:hidden leading-none text-xl bg-transparent text-gray-600 hover:text-gray-700 focus:text-gray-700 transition-shadow duration-150 ease-in-out mr-2"
+              className=" navbar-toggler border-0 py-3 lg:hidden leading-none text-xl bg-transparent text-gray-600 hover:text-gray-700 focus:text-gray-700 transition-shadow duration-150 ease-in-out mr-2"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContentY"
@@ -28,7 +28,7 @@ const Header = () => {
                 aria-hidden="true"
                 focusable="false"
                 data-prefix="fas"
-                class="w-5"
+                className="w-5"
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
@@ -43,10 +43,10 @@ const Header = () => {
           {/* mobile hamburger E*/}
 
           {/* LOGO */}
-          <div class="h-[100px] px-6 flex flex-wrap items-center flex-row justify-center">
-            <div class="lg:static lg:translate-x-0 lg:translate-y-0 flex flex-row justify-center absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] ">
+          <div className="h-[100px] px-6 flex flex-wrap items-center flex-row justify-center">
+            <div className="lg:static lg:translate-x-0 lg:translate-y-0 flex flex-row justify-center absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] ">
               <img
-                class="inline-block"
+                className="inline-block"
                 src={logo}
                 alt="logo"
               />
@@ -54,30 +54,30 @@ const Header = () => {
           </div>
 
           {/* PC Menu items */}
-          <div class=" hidden lg:flex grow-2 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] items-center justify-center float-left">
-            <div class="  flex items-center">
+          <div className=" hidden lg:flex grow-2 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] items-center justify-center float-left">
+            <div className="  flex items-center">
               <Link to={`/search/${search_KW}`}>
                 <button>
                   <img
                     src={search}
-                    class="w-[27px] h-[27px] mr-[14px] inlin-block align-middle dark:invert"
+                    className="w-[27px] h-[27px] mr-[14px] inlin-block align-middle dark:invert"
                     alt="search"
                   />
                 </button>
               </Link>
               <input
-                class="bg-[#5469b2] w-[290px] h-[38px] rounded-[20px] p-4  text-white placeholder:text-white dark:bg-gray-700"
+                className="bg-[#5469b2] w-[290px] h-[38px] rounded-[20px] p-4  text-white placeholder:text-white dark:bg-gray-700"
                 placeholder="검색어를 입력해주세요"
                 onChange={onChange}
               />
             </div>
           </div>
-          <div class=" grow-1 flex ">
-            <ul class=" navbar-nav flex items-center ">
-              <ul class="lg:flex hidden items-center">
-                <li class=" nav-item">
+          <div className=" grow-1 flex ">
+            <ul className=" navbar-nav flex items-center ">
+              <ul className="lg:flex hidden items-center">
+                <li className=" nav-item">
                   <a
-                    class="nav-link block pr-2 lg:px-2 py-2 mr-[91px] hover:text-blue-500 focus:text-gray-700 transition duration-150 ease-in-out dark:text-white"
+                    className="nav-link block pr-2 lg:px-2 py-2 mr-[91px] hover:text-blue-500 focus:text-gray-700 transition duration-150 ease-in-out dark:text-white"
                     href="#!"
                     data-mdb-ripple="true"
                     data-mdb-ripple-color="light"
@@ -85,10 +85,10 @@ const Header = () => {
                     추천 관광지
                   </a>
                 </li>
-                <li class="nav-item">
+                <li className="nav-item">
                   <a
-                    class=" nav-link block lg:px-3 mr-[120px] py-2 hover:text-blue-500 focus:text-gray-700 transition duration-150 ease-in-out dark:text-white"
-                    href="#!"
+                    className=" nav-link block lg:px-3 mr-[120px] py-2 hover:text-blue-500 focus:text-gray-700 transition duration-150 ease-in-out dark:text-white"
+                    href="map"
                     data-mdb-ripple="true"
                     data-mdb-ripple-color="light"
                   >

@@ -15,13 +15,13 @@ const Switcher = () => {
   return (
     <button
       type="button"
-      class="text-black bg-white shadow-md hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5  dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:text-white"
+      className="text-black bg-white shadow-md hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5  dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:text-white"
       onClick={toggleDarkMode}
     >
       {colorTheme === 'light' ? (
-        <span class="font-bold">LIGHT</span>
+        <span className="font-bold">LIGHT</span>
       ) : (
-        <span class="font-bold">DARK</span>
+        <span className="font-bold">DARK</span>
       )}
     </button>
   );
