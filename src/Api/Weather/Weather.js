@@ -81,7 +81,7 @@ const Weather = ({ moveCityData }) => {
     return (
       <div>
         <ul>
-          <li class="block text-center font-bold dark:text-white">{`${city}`}</li>
+          <li className="block text-center font-bold dark:text-white">{`${city}`}</li>
           <img
             src={`http://openweathermap.org/img/wn/${clear.weather[0].icon.slice(
               0,
@@ -89,8 +89,8 @@ const Weather = ({ moveCityData }) => {
             )}d@2x.png`}
             alt="weatherIcon"
           />
-          <li class="block text-center font-bold dark:text-white">{`${clear.main.temp}`}</li>
-          <li class="block text-center font-bold dark:text-white">{`${clear.weather[0].main}`}</li>
+          <li className="block text-center font-bold dark:text-white">{`${clear.main.temp}`}</li>
+          <li className="block text-center font-bold dark:text-white">{`${clear.weather[0].main}`}</li>
         </ul>
       </div>
     );
@@ -107,8 +107,8 @@ const Weather = ({ moveCityData }) => {
   };
 
   return (
-    <div class="flex w-[256px] h-[286px] rounded-lg shadow-lg bg-white dark:bg-gray-900">
-      <div class="m-auto">{check()}</div>
+    <div className="flex w-[256px] h-[286px] rounded-lg shadow-lg bg-white dark:bg-gray-900">
+      <div className="m-auto">{check()}</div>
     </div>
   );
 };

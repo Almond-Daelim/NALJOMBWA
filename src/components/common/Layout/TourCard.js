@@ -36,8 +36,8 @@ const TourCard = api_data => {
             />
           </ul>
 
-          <li class="text-lg font-bold mt-2 dark:text-white">{title}</li>
-          <li class=" dark:text-gray-400">{addr1}</li>
+          <li className="text-lg font-bold mt-2 dark:text-white">{title}</li>
+          <li className=" dark:text-gray-400">{addr1}</li>
         </ul>
       </Link>
     </div>
