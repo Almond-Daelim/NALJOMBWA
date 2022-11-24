@@ -4,6 +4,8 @@ import axios from 'axios';
 const Weather = ({ moveCityData }) => {
   const [weather, setWeather] = useState(null);
   const [apiError, setApiError] = useState(null);
+  const [cityName, setCityName] = useState(null);
+  const [clearDay, setClearDay] = useState(null);
 
   useEffect(() => {
     const api = {
@@ -29,6 +31,7 @@ const Weather = ({ moveCityData }) => {
           });
           localStorage.setItem('cityData', JSON.stringify(data.list));
           localStorage.setItem('saveDate', Date.now());
+          setData(data.list);
         })
         .catch(err => {
           console.log('실패');
@@ -39,58 +42,64 @@ const Weather = ({ moveCityData }) => {
       setWeather({
         data: JSON.parse(localStorage.getItem('cityData')),
       });
+      setData(JSON.parse(localStorage.getItem('cityData')));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const shuffle = arr => {
     return arr.sort(() => Math.random() - 0.5);
   };
-  const isClear = element => {
-    if (element.weather[0].main === 'Clear') {
-      return true;
-    }
-  };
-  const isClouds = element => {
-    if (element.weather[0].main === 'Clouds') {
-      return true;
-    }
-  };
-  const isAbout = element => {
-    return true;
-  };
-  const trName = clear => {
-    let city = null;
-    WeatherData.map(data => {
-      if (clear.id === parseInt(data.city_id)) {
-        city = data.kr;
+
+  const setData = weather => {
+    const isClear = element => {
+      if (element.weather[0].main === 'Clear') {
+        return true;
       }
-      return null;
-    });
-    return city;
+    };
+    const isClouds = element => {
+      if (element.weather[0].main === 'Clouds') {
+        return true;
+      }
+    };
+    const isAbout = element => {
+      return true;
+    };
+    const trName = clear => {
+      let city = null;
+      WeatherData.map(data => {
+        if (clear.id === parseInt(data.city_id)) {
+          city = data.kr;
+        }
+        return null;
+      });
+      return city;
+    };
+    let clear = weather.find(isClear);
+    if (clear === undefined) {
+      clear = weather.find(isClouds);
+      if (clear === undefined) {
+        clear = weather.find(isAbout);
+      }
+    }
+    setCityName(trName(clear));
+    moveCityData(trName(clear));
+    setClearDay(clear);
   };
 
   const makeWeatherInfo = () => {
-    let clear = weather.data.find(isClear);
-    if (clear === undefined) {
-      clear = weather.data.find(isClouds);
-      if (clear === undefined) {
-        clear = weather.data.find(isAbout);
-      }
-    }
-    let city = trName(clear);
-    moveCityData(city);
     return (
       <div>
         <ul>
-          <li className="block text-center font-bold dark:text-white">{`${city}`}</li>
+          <li className="block text-center font-bold dark:text-white">{`${cityName}`}</li>
           <img
-            src={`http://openweathermap.org/img/wn/${clear.weather[0].icon.slice(
+            src={`http://openweathermap.org/img/wn/${clearDay.weather[0].icon.slice(
               0,
               -1,
             )}d@2x.png`}
             alt="weatherIcon"
           />
-          <li className="block text-center font-bold dark:text-white">{`${clear.main.temp}`}</li>
-          <li className="block text-center font-bold dark:text-white">{`${clear.weather[0].main}`}</li>
+          <li className="block text-center font-bold dark:text-white">{`${clearDay.main.temp}`}</li>
+          <li className="block text-center font-bold dark:text-white">{`${clearDay.weather[0].main}`}</li>
         </ul>
       </div>
     );

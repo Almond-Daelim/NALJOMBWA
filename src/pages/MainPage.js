@@ -9,7 +9,6 @@ const MainPage = () => {
   const getData = () => <Weather moveCityData={moveCityData} />;
   const moveCityData = x => {
     setCityName(x);
-    console.log(x);
   };
 
   return (
