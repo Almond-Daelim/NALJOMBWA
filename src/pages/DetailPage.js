@@ -122,7 +122,7 @@ const Detail = () => {
   };
 
   return (
-    <div class="dark:bg-slate-900">
+    <div className="dark:bg-slate-900">
       <Header />
       {/* Tab Menu */}
       {clickTab === 0 ? (

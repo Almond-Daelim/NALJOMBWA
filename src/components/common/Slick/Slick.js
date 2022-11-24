@@ -30,7 +30,6 @@ const Slick = props => {
   return (
     <>
       {getData()}
-      {console.log(tourData[0])}
       {loding ? <div /> : <CardSlier data={tourData} />}
     </>
   );
