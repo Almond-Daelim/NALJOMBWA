@@ -86,14 +86,15 @@ const Header = () => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a
-                    className=" nav-link block lg:px-3 mr-[120px] py-2 hover:text-blue-500 focus:text-gray-700 transition duration-150 ease-in-out dark:text-white"
-                    href="map"
-                    data-mdb-ripple="true"
-                    data-mdb-ripple-color="light"
-                  >
-                    지도보기
-                  </a>
+                  <Link to="/map">
+                    <span
+                      className="nav-link block lg:px-3 mr-[120px] py-2 hover:text-blue-500 focus:text-gray-700 transition duration-150 ease-in-out dark:text-white"
+                      data-mdb-ripple="true"
+                      data-mdb-ripple-color="light"
+                    >
+                      지도보기
+                    </span>
+                  </Link>
                 </li>
               </ul>
               <Switcher />
