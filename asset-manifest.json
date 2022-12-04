@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/homepage%20:%20https://almond-daelim.github.io/NALJOMBWA/static/css/main.0524b6de.css",
+    "main.js": "/homepage%20:%20https://almond-daelim.github.io/NALJOMBWA/static/js/main.5c52572b.js",
+    "static/media/map.jpg": "/homepage%20:%20https://almond-daelim.github.io/NALJOMBWA/static/media/map.cae69c8630cc9e1648c0.jpg",
+    "static/media/slick.svg": "/homepage%20:%20https://almond-daelim.github.io/NALJOMBWA/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/homepage%20:%20https://almond-daelim.github.io/NALJOMBWA/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/homepage%20:%20https://almond-daelim.github.io/NALJOMBWA/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/homepage%20:%20https://almond-daelim.github.io/NALJOMBWA/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/homepage%20:%20https://almond-daelim.github.io/NALJOMBWA/index.html",
+    "main.0524b6de.css.map": "/homepage%20:%20https://almond-daelim.github.io/NALJOMBWA/static/css/main.0524b6de.css.map",
+    "main.5c52572b.js.map": "/homepage%20:%20https://almond-daelim.github.io/NALJOMBWA/static/js/main.5c52572b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0524b6de.css",
+    "static/js/main.5c52572b.js"
+  ]
+}
