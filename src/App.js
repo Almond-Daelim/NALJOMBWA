@@ -1,22 +1,39 @@
 import '../src/styles/global.css';
-import { Mobile, PC } from '../src/hooks/useMediaQuery';
+import { Route, Routes } from 'react-router-dom';
+import Home from '../src/pages/index';
+import SearchPage from './pages/SearchPage';
+import DetailPage from './pages/DetailPage';
+import MapPage from './pages/MapPage';
+import RecPage from './pages/RecPage';
 
 function App() {
   return (
-    <>
-      <div>
-        <Mobile>
-          <div className="mobile_container">이건 모바일 !!</div>
-        </Mobile>
-        <div className="pc_container">
-          <PC>요건 PC !!!</PC>
-        </div>
-      </div>
-      <div className="text-3xl font-bold underline">Hello world!</div>
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Button
-      </button>
-    </>
+    <Routes>
+      <Route
+        path="/"
+        element={<Home />}
+      />
+      <Route
+        path="/search/:search_KW"
+        element={<SearchPage />}
+      />
+      <Route
+        path="/detail/:title"
+        element={<DetailPage />}
+      />
+      <Route
+        path="/map"
+        element={<MapPage />}
+      />
+      <Route
+        path="/rec"
+        element={<RecPage />}
+      />
+      <Route
+        path="detail/rec"
+        element={<RecPage />}
+      />
+    </Routes>
   );
 }
 
