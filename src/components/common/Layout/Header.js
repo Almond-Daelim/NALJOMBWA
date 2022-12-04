@@ -77,14 +77,16 @@ const Header = () => {
             <ul className=" navbar-nav flex items-center ">
               <ul className="lg:flex hidden items-center">
                 <li className=" nav-item">
-                  <a
-                    className="nav-link block pr-2 lg:px-2 py-2 mr-[91px] hover:text-blue-500 focus:text-gray-700 transition duration-150 ease-in-out dark:text-white"
-                    href="rec"
-                    data-mdb-ripple="true"
-                    data-mdb-ripple-color="light"
-                  >
-                    추천 관광지
-                  </a>
+                  <Link to="/rec">
+                    <a
+                      className="nav-link block pr-2 lg:px-2 py-2 mr-[91px] hover:text-blue-500 focus:text-gray-700 transition duration-150 ease-in-out dark:text-white"
+                      href="/#"
+                      data-mdb-ripple="true"
+                      data-mdb-ripple-color="light"
+                    >
+                      추천 관광지
+                    </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
                   <Link to="/map">

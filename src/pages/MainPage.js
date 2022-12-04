@@ -3,6 +3,7 @@ import Button from '../components/common/Button/Button';
 import Weather from '../Api/Weather/Weather';
 import TourListPage from './TourListPage';
 import Slick from '../components/common/Slick/Slick';
+import { Link } from 'react-router-dom';
 
 const MainPage = () => {
   const [cityName, setCityName] = useState(null);
@@ -22,11 +23,11 @@ const MainPage = () => {
                 오늘의 관광지 추천!
               </h3>
               <div className="text-2xl my-6 dark:text-white">{cityName}</div>
-              <a href="rec">
+              <Link to="/rec">
                 <Button
                   title={`${cityName}의 추천 관광지 \n 리스트 보러 가기 →`}
                 />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -38,7 +39,7 @@ const MainPage = () => {
                 keyWord={cityName}
               />
             ) : (
-              <div>정보없음</div>
+              <div>정보없음 </div>
             )}
           </div>
         </div>

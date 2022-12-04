@@ -34,7 +34,7 @@ const Rec = () => {
             tour_cnt={100}
           />
         ) : (
-          <div>정보없음</div>
+          <div>정보없음 </div>
         )}
       </div>
       <Footer />
