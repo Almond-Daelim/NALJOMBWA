@@ -1,9 +1,14 @@
 import React from 'react';
+import Header from '../components/common/Layout/Header';
+import Footer from '../components/common/Layout/Footer';
+import MainPage from './MainPage';
 
 const Home = () => {
   return (
-    <div>
-      <h1 className="m-5 text-blue-500 font-bold">Hello Home</h1>
+    <div className="dark:bg-slate-900">
+      <Header />
+      <MainPage />
+      <Footer />
     </div>
   );
 };
