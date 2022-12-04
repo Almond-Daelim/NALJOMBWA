@@ -43,7 +43,7 @@ const Header = () => {
           {/* mobile hamburger E*/}
 
           {/* LOGO */}
-          <Link to={`/`}>
+          <Link to="/">
             <div className="h-[100px] px-6 flex flex-wrap items-center flex-row justify-center">
               <div className="lg:static lg:translate-x-0 lg:translate-y-0 flex flex-row justify-center absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] ">
                 <img
@@ -87,14 +87,15 @@ const Header = () => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a
-                    className=" nav-link block lg:px-3 mr-[120px] py-2 hover:text-blue-500 focus:text-gray-700 transition duration-150 ease-in-out dark:text-white"
-                    href="map"
-                    data-mdb-ripple="true"
-                    data-mdb-ripple-color="light"
-                  >
-                    지도보기
-                  </a>
+                  <Link to="/map">
+                    <span
+                      className="nav-link block lg:px-3 mr-[120px] py-2 hover:text-blue-500 focus:text-gray-700 transition duration-150 ease-in-out dark:text-white"
+                      data-mdb-ripple="true"
+                      data-mdb-ripple-color="light"
+                    >
+                      지도보기
+                    </span>
+                  </Link>
                 </li>
               </ul>
               <Switcher />
