@@ -11,6 +11,8 @@ const Tour = props => {
   const contentTypeId = props.contentTypeId;
   const env = process.env;
   const service_check = pageNo === 2 ? 'detailIntro' : 'searchKeyword';
+  const tour_cnt = props.tour_cnt;
+  const list_cnt = tour_cnt === '' ? 8 : tour_cnt;
 
   //api Assets
   const api = {
@@ -21,7 +23,7 @@ const Tour = props => {
     MoblieApp: env.REACT_APP_MOBILE_APP,
     listYN: env.REACT_APP_LISTYN,
     arrange: env.REACT_APP_ARRANGE,
-    numOfRows: env.REACT_APP_NUM_OF_ROWS,
+    numOfRows: list_cnt,
     pageNo: env.REACT_APP_PAGE_NO,
     _type: env.REACT_APP_TYPE,
   };

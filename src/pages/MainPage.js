@@ -22,10 +22,11 @@ const MainPage = () => {
                 오늘의 관광지 추천!
               </h3>
               <div className="text-2xl my-6 dark:text-white">{cityName}</div>
-              <Button
-                title={`${cityName}의 추천 관광지 \n 리스트 보러 가기 →`}
-                onPress={() => alert('asdf')}
-              />
+              <a href="rec">
+                <Button
+                  title={`${cityName}의 추천 관광지 \n 리스트 보러 가기 →`}
+                />
+              </a>
             </div>
           </div>
         </div>

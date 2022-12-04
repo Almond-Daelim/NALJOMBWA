@@ -43,16 +43,17 @@ const Header = () => {
           {/* mobile hamburger E*/}
 
           {/* LOGO */}
-          <div className="h-[100px] px-6 flex flex-wrap items-center flex-row justify-center">
-            <div className="lg:static lg:translate-x-0 lg:translate-y-0 flex flex-row justify-center absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] ">
-              <img
-                className="inline-block"
-                src={logo}
-                alt="logo"
-              />
+          <Link to={`/`}>
+            <div className="h-[100px] px-6 flex flex-wrap items-center flex-row justify-center">
+              <div className="lg:static lg:translate-x-0 lg:translate-y-0 flex flex-row justify-center absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] ">
+                <img
+                  className="inline-block"
+                  src={logo}
+                  alt="logo"
+                />
+              </div>
             </div>
-          </div>
-
+          </Link>
           {/* PC Menu items */}
           <div className=" hidden lg:flex grow-2 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] items-center justify-center float-left">
             <div className="  flex items-center">
@@ -78,7 +79,7 @@ const Header = () => {
                 <li className=" nav-item">
                   <a
                     className="nav-link block pr-2 lg:px-2 py-2 mr-[91px] hover:text-blue-500 focus:text-gray-700 transition duration-150 ease-in-out dark:text-white"
-                    href="#!"
+                    href="rec"
                     data-mdb-ripple="true"
                     data-mdb-ripple-color="light"
                   >

@@ -4,6 +4,7 @@ import Home from '../src/pages/index';
 import SearchPage from './pages/SearchPage';
 import DetailPage from './pages/DetailPage';
 import MapPage from './pages/MapPage';
+import RecPage from './pages/RecPage';
 
 function App() {
   return (
@@ -23,6 +24,14 @@ function App() {
       <Route
         path="/map"
         element={<MapPage />}
+      />
+      <Route
+        path="/rec"
+        element={<RecPage />}
+      />
+      <Route
+        path="detail/rec"
+        element={<RecPage />}
       />
     </Routes>
   );

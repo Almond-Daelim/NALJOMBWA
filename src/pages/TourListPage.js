@@ -10,6 +10,7 @@ const TourListPage = props => {
   const contentId = TpageNo.contentId;
   const contentTypeId = TpageNo.contentTypeId;
   const [loding, setLoding] = useState(true);
+  const tour_cnt = TpageNo.tour_cnt;
 
   const setData = newData => {
     setTourData(newData);
@@ -33,6 +34,7 @@ const TourListPage = props => {
         keyWord={kw_result}
         contentId={contentId}
         contentTypeId={contentTypeId}
+        tour_cnt={tour_cnt}
       />
     );
   };
