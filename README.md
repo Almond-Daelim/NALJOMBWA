@@ -2,5 +2,6 @@
 
 대림대학교 아몬드팀 - 날좀봐 저장소
 
-배포링크
-https://almond-naljombwa.netlify.app/
+<!-- 오래전 소스이다보니 투어 API의 호출 문제로 배포된 사이트가 정상작동하지 않아 추후 문제해결후 다시 업데이트 해놓겠습니다 -->
+<!--배포링크-->
+<!--https://almond-naljombwa.netlify.app/-->
